@@ -106,10 +106,10 @@ if __name__ == "__main__":
         print(f"\nTrending repositories ({period}):")
         trending_repos = get_trending_repositories(period)
         print(f"Fetched {len(trending_repos)} repositories.")
-        for repo in trending_repos[:5]:  # Show first 5, but all are fetched
+        for repo in trending_repos[:10]:  # Show first 5, but all are fetched
             print(f"Repo: {repo['repo_name']}, Link: {repo['link']}, "
                   f"Language: {repo['language']}, Stars: {repo['stars']}, "
                   f"Forks: {repo['forks']}, Stars in period: {repo['stars_in_period']}, "
                   f"Description: {repo['description']}")
-        if len(trending_repos) > 5:
+        if len(trending_repos) > 10:
             print("... (additional repositories fetched but not displayed)")
