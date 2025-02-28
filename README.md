@@ -2,6 +2,12 @@
 
 A FastAPI-based REST API that scrapes and serves GitHub's trending repositories information. This API allows you to fetch trending repositories with various time frames (daily, weekly, monthly) and includes detailed repository information such as stars, forks, and descriptions.
 
+## Motivation
+Building this as current Github API doesn't have the trending repo data, have searchde online for online sources but the data format isn't what I want.
+Please feel free to use and enhance the API.
+
+Implemented the API in a Coze Bot: https://www.coze.com/store/agent/7476082421604155409
+
 ## Features
 
 - 🚀 Fast and lightweight API
@@ -45,78 +51,6 @@ json
 }
 ]
 }
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.7 or higher
-- Node.js (for Vercel CLI)
-
-### Installation
-
-1. Clone the repository:
-bash
-git clone <your-repository-url>
-cd github-trending-api
-
-
-2. Create and activate a virtual environment:
-bash
-python -m venv venv
-source venv/bin/activate # On Windows use: venv\Scripts\activate
-
-3. Install dependencies:
-bash
-pip install -r requirements.txt
-
-
-### Local Development
-
-Run the development server:
-bash
-uvicorn api.index:app --reload
-
-
-The API will be available at:
-- Main API: http://localhost:8000
-- API Documentation: http://localhost:8000/docs
-- Alternative Documentation: http://localhost:8000/redoc
-
-### Project Structure
-
-├── api/
-│ ├── init.py
-│ ├── index.py # FastAPI application
-│ └── github_trending.py # Core scraping functionality
-├── .gitignore
-├── README.md
-├── requirements.txt
-└── vercel.json # Vercel deployment configuration
-
-## Deployment
-
-This project is configured for deployment on Vercel.
-
-1. Install Vercel CLI:
-bash
-npm i -g vercel
-
-2. Deploy to Vercel:
-bash
-vercel
-
-3. For production deployment:
-bash
-vercel --prod
-
-## Error Handling
-
-The API returns appropriate HTTP status codes:
-
-- `200`: Successful request
-- `400`: Invalid time_frame parameter
-- `500`: Server error (e.g., GitHub scraping failed)
 
 ## Rate Limiting
 
